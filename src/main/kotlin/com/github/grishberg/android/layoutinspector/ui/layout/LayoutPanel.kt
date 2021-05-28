@@ -154,4 +154,10 @@ class LayoutPanel(
     fun setSizeDpMode(sizeInDpEnabled: Boolean) {
         logic.setSizeDpMode(sizeInDpEnabled)
     }
+
+    fun hasSelection() = logic.hasSelection()
+
+    fun removeSelection() {
+        logic.removeSelection()
+    }
 }

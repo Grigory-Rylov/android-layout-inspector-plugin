@@ -455,6 +455,19 @@ class LayoutLogic(
         onLayoutSelectedAction?.onDistanceCalculated(distances.distance)
     }
 
+    fun hasSelection() = selectedRectangle != null
+
+    fun removeSelection() {
+        selectedRectangle = null
+        selectionRectangle = null
+        rulerRectangle = null
+        rulerPointer = null
+        hoveredRectangle = null
+        recalculateDistanceAction = null
+        skippedNodes.clear()
+        panel.repaint()
+    }
+
     interface OnLayoutSelectedAction {
         fun onNodeHovered(node: ViewNode)
         fun onNodeSelected(node: ViewNode)
